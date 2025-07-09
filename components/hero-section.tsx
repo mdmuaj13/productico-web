@@ -102,8 +102,8 @@ export default function HeroSection() {
 									preset="fade-in-blur"
 									speedSegment={0.3}
 									as="h1"
-									className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-									Modern Solutions for Customer Engagement
+									className="mt-8 text-balance text-4xl md:text-5xl lg:mt-16 mx-8 md:mx-16">
+									Business management software for Manufacturing Business
 								</TextEffect>
 								<TextEffect
 									per="line"
@@ -112,8 +112,9 @@ export default function HeroSection() {
 									delay={0.5}
 									as="p"
 									className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-									Highly customizable components for building modern websites
-									and applications that look and feel the way you mean it.
+									Skip the tech struggles and focus on your passion. Create your
+									shop, showcase your products, and manage everything with our
+									all-in-one solution.
 								</TextEffect>
 
 								<AnimatedGroup
@@ -175,16 +176,16 @@ export default function HeroSection() {
 								<div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
 									<Image
 										className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-										src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/dashboard/admin-users.png"
+										src="/images/dashboards.png"
 										alt="app screen"
-										width="1024"
+										width="1224"
 										height="1440"
 									/>
 									<Image
 										className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-										src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/dashboard/admin-users.png"
+										src="/images/dashboards.png"
 										alt="app screen"
-										width="1024"
+										width="1224"
 										height="1440"
 									/>
 								</div>
@@ -194,7 +195,7 @@ export default function HeroSection() {
 				</section>
 				<section className="bg-background pb-16 pt-16 md:pb-32">
 					<div className="group relative m-auto max-w-5xl px-6">
-						<div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
+						{/* <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
 							<Link
 								href="/"
 								className="block text-sm duration-150 hover:opacity-75">
@@ -202,7 +203,7 @@ export default function HeroSection() {
 
 								<ChevronRight className="ml-1 inline-block size-3" />
 							</Link>
-						</div>
+						</div> */}
 						<div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
 							<div className="flex">
 								<img

@@ -8,19 +8,13 @@ export default function CtaTwo() {
                 <div className="mx-auto max-w-5xl px-6">
                     <div className="flex flex-wrap items-center justify-between gap-6">
                         <div>
-                            <h2 className="text-foreground text-balance text-3xl font-semibold lg:text-4xl">Build 10x Faster with Mist</h2>
+                            <h2 className="text-foreground text-balance text-2xl font-semibold lg:text-3xl">Build 10x Faster with Productico</h2>
                         </div>
                         <div className="flex justify-end gap-3">
                             <Button
                                 asChild
-                                variant="outline"
                                 size="lg">
-                                <Link href="#">Get a Demo</Link>
-                            </Button>
-                            <Button
-                                asChild
-                                size="lg">
-                                <Link href="#">Get Started</Link>
+                                <Link href="#">Book A Demo</Link>
                             </Button>
                         </div>
                     </div>
