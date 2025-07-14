@@ -20,11 +20,10 @@ export default function GrowthTool() {
 						<Card className="group overflow-hidden shadow-zinc-950/5 sm:col-span-3 sm:rounded-none sm:rounded-tl-xl">
 							<CardHeader>
 								<div className="md:p-6">
-									<p className="font-medium">Smart Analytics Dashboard</p>
+									<p className="font-medium">Launch Your Online Store</p>
 									<p className="text-muted-foreground mt-3 max-w-sm text-sm">
-										Track sales, monitor performance, and gain valuable insights
-										with our comprehensive analytics suite designed for modern
-										businesses.
+										Get your own professional web shop online in minutes. Sell
+										to anyone, anywhere, 24/7. No coding needed.
 									</p>
 								</div>
 							</CardHeader>
@@ -52,7 +51,7 @@ export default function GrowthTool() {
 						</Card>
 						<Card className="group overflow-hidden shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-tr-xl">
 							<p className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl md:p-6">
-								Streamlined Asset Management
+								Easy, Professional Invoices
 							</p>
 
 							<CardContent className="mt-auto">
@@ -78,60 +77,65 @@ export default function GrowthTool() {
 							</CardContent>
 						</Card>
 
-                    <Card className="group p-6 shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
-                        <p className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">Advanced UX, Instantly locate all your assets.</p>
+						<Card className="group p-6 shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
+							<p className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">
+								Manage All Your Orders
+							</p>
 
-                        <div className="flex justify-center gap-6">
-                            <div className="inset-shadow-sm dark:inset-shadow-white/5 bg-muted/35 relative flex aspect-square size-16 items-center rounded-[7px] border p-3 shadow-lg ring dark:shadow-white/5 dark:ring-black">
-                                <span className="absolute right-2 top-1 block text-sm">fn</span>
-                                <Globe className="mt-auto size-4" />
-                            </div>
-                            <div className="inset-shadow-sm dark:inset-shadow-white/5 bg-muted/35 flex aspect-square size-16 items-center justify-center rounded-[7px] border p-3 shadow-lg ring dark:shadow-white/5 dark:ring-black">
-                                <span>K</span>
-                            </div>
-                        </div>
-                    </Card>
-                    <Card className="group relative shadow-zinc-950/5 sm:col-span-3 sm:rounded-none sm:rounded-br-xl">
-                        <CardHeader className="p-6 md:p-12">
-                            <p className="font-medium">Advanced tracking system</p>
-                            <p className="text-muted-foreground mt-2 max-w-sm text-sm">Quick AI lives a single hotkey away apps..</p>
-                        </CardHeader>
-                        <CardContent className="relative h-fit px-6 pb-6 md:px-12 md:pb-12">
-                            <div className="grid grid-cols-4 gap-2 md:grid-cols-6">
-                                <div className="rounded-(--radius) aspect-square border border-dashed"></div>
-                                <div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
-                                    <img
-                                        className="m-auto size-8 invert dark:invert-0"
-                                        src="https://oxymor-ns.tailus.io/logos/linear.svg"
-                                        alt="Linear logo"
-                                        width="32"
-                                        height="32"
-                                    />
-                                </div>
-                                <div className="rounded-(--radius) aspect-square border border-dashed"></div>
-                                <div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
-                                    <img
-                                        className="m-auto size-8 invert dark:invert-0"
-                                        src="https://oxymor-ns.tailus.io/logos/netlify.svg"
-                                        alt="Netlify logo"
-                                        width="32"
-                                        height="32"
-                                    />
-                                </div>
-                                <div className="rounded-(--radius) aspect-square border border-dashed"></div>
-                                <div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
-                                    <img
-                                        className="m-auto size-8 invert dark:invert-0"
-                                        src="https://oxymor-ns.tailus.io/logos/github.svg"
-                                        alt="github logo"
-                                        width="32"
-                                        height="32"
-                                    />
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
+							<div className="flex justify-center gap-6">
+								<div className="inset-shadow-sm dark:inset-shadow-white/5 bg-muted/35 relative flex aspect-square size-16 items-center rounded-[7px] border p-3 shadow-lg ring dark:shadow-white/5 dark:ring-black">
+									<span className="absolute right-2 top-1 block text-sm">
+										fn
+									</span>
+									<Globe className="mt-auto size-4" />
+								</div>
+								<div className="inset-shadow-sm dark:inset-shadow-white/5 bg-muted/35 flex aspect-square size-16 items-center justify-center rounded-[7px] border p-3 shadow-lg ring dark:shadow-white/5 dark:ring-black">
+									<span>K</span>
+								</div>
+							</div>
+						</Card>
+						<Card className="group relative shadow-zinc-950/5 sm:col-span-3 sm:rounded-none sm:rounded-br-xl">
+							<CardHeader className="p-6 md:p-12">
+								<p className="font-medium">Know Your Customers Better</p>
+								<p className="text-muted-foreground mt-2 max-w-sm text-sm">
+									Automate your shipping & payments.
+								</p>
+							</CardHeader>
+							<CardContent className="relative h-fit px-6 pb-6 md:px-12 md:pb-12">
+								<div className="grid grid-cols-4 gap-2 md:grid-cols-6">
+									<div className="rounded-(--radius) aspect-square border border-dashed"></div>
+									<div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
+										<img
+											className="m-auto size-8 invert dark:invert-0"
+											src="https://oxymor-ns.tailus.io/logos/linear.svg"
+											alt="Linear logo"
+											width="32"
+											height="32"
+										/>
+									</div>
+									<div className="rounded-(--radius) aspect-square border border-dashed"></div>
+									<div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
+										<img
+											className="m-auto size-8 invert dark:invert-0"
+											src="https://oxymor-ns.tailus.io/logos/netlify.svg"
+											alt="Netlify logo"
+											width="32"
+											height="32"
+										/>
+									</div>
+									<div className="rounded-(--radius) aspect-square border border-dashed"></div>
+									<div className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
+										<img
+											className="m-auto size-8 invert dark:invert-0"
+											src="https://oxymor-ns.tailus.io/logos/github.svg"
+											alt="github logo"
+											width="32"
+											height="32"
+										/>
+									</div>
+								</div>
+							</CardContent>
+						</Card>
 					</div>
 					<div className="relative pt-2">
 						<div className="relative z-10 grid grid-cols-6 gap-3">
@@ -211,11 +215,11 @@ export default function GrowthTool() {
 									</div>
 									<div className="relative z-10 mt-6 space-y-2 text-center">
 										<h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">
-											Smart Dashboard
+											Safe & Secure Operations
 										</h2>
 										<p className="text-foreground">
-											Personalized insights and controls designed to match your
-											workflow and business goals.
+											Your business data and customer information are protected
+											with top-level security. Peace of mind guaranteed.
 										</p>
 									</div>
 								</CardContent>
@@ -304,12 +308,11 @@ export default function GrowthTool() {
 									</div>
 									<div className="relative z-10 mt-14 space-y-2 text-center">
 										<h2 className="text-lg font-medium transition">
-											Lightning Fast Performance
+											Smart Insights for Growth
 										</h2>
 										<p className="text-foreground">
-											Experience blazing-fast load times and seamless
-											interactions that keep your customers engaged and coming
-											back.
+											Track sales trends, see what's selling best, and make
+											smart decisions to grow your business faster.
 										</p>
 									</div>
 								</CardContent>

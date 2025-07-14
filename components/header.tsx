@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { Logo } from './logo';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import React from 'react';
@@ -8,10 +7,10 @@ import { cn } from '@/lib/utils';
 import { PrimaryLogo } from './primary-logo';
 
 const menuItems = [
-	{ name: 'Features', href: '#link' },
-	{ name: 'Solution', href: '#link' },
-	{ name: 'Pricing', href: '#link' },
-	{ name: 'About', href: '#link' },
+	{ name: 'Features', href: '#features' },
+	{ name: 'Solution', href: '#solution' },
+	{ name: 'Pricing', href: '#pricing' },
+	{ name: 'Faq', href: '#faqs' },
 ];
 
 export const Header = () => {
@@ -25,6 +24,28 @@ export const Header = () => {
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
+
+	const handleSmoothScroll = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		href: string
+	) => {
+		e.preventDefault();
+		const targetId = href.replace('#', '');
+		const targetElement = document.getElementById(targetId);
+
+		if (targetElement) {
+			const headerHeight = 80; // Adjust based on your header height
+			const targetPosition = targetElement.offsetTop - headerHeight;
+
+			window.scrollTo({
+				top: targetPosition,
+				behavior: 'smooth',
+			});
+		}
+
+		// Close mobile menu after clicking
+		setMenuState(false);
+	};
 	return (
 		<header>
 			<nav
@@ -60,6 +81,7 @@ export const Header = () => {
 									<li key={index}>
 										<Link
 											href={item.href}
+											onClick={(e) => handleSmoothScroll(e, item.href)}
 											className="text-muted-foreground hover:text-accent-foreground block duration-150">
 											<span>{item.name}</span>
 										</Link>
@@ -75,6 +97,7 @@ export const Header = () => {
 										<li key={index}>
 											<Link
 												href={item.href}
+												onClick={(e) => handleSmoothScroll(e, item.href)}
 												className="text-muted-foreground hover:text-accent-foreground block duration-150">
 												<span>{item.name}</span>
 											</Link>

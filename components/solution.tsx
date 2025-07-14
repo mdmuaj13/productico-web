@@ -8,30 +8,31 @@ export default function Solution() {
 				<div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
 					<div className="lg:col-span-2">
 						<div className="md:pr-6 lg:pr-0">
-							<h2 className="text-4xl font-semibold lg:text-5xl">
-								Built for Scaling teams
+							<h2 className="text-3xl font-semibold lg:text-4xl">
+								Look Professional,
+								<br /> Get Paid
 							</h2>
 							<p className="mt-6">
-								Orrupti aut temporibus assumenda atque ab, accusamus sit,
-								molestiae veniam laboriosam pariatur.
+								Create clean, branded invoices for every single order. Build
+								customer trust and track your sales.
 							</p>
 						</div>
 						<ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
 							<li>
 								<Mail className="size-5" />
-								Email and web support
+								Generate Instantly
 							</li>
 							<li>
 								<Zap className="size-5" />
-								Fast response time
+								Track Payment Status
 							</li>
 							<li>
 								<Activity className="size-5" />
-								Menitoring and analytics
+								Share PDF Invoices
 							</li>
 							<li>
 								<DraftingCompass className="size-5" />
-								Architectural review
+								Your Branding
 							</li>
 						</ul>
 					</div>

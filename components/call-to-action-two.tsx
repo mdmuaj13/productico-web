@@ -14,7 +14,7 @@ export default function CtaTwo() {
                             <Button
                                 asChild
                                 size="lg">
-                                <Link href="#">Book A Demo</Link>
+                                <Link target='_blank' href="https://tally.so/r/3yYzo6">Book A Demo</Link>
                             </Button>
                         </div>
                     </div>

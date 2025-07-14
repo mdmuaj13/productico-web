@@ -78,10 +78,10 @@ export default function HeroSection() {
 							<div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 								<AnimatedGroup variants={transitionVariants}>
 									<Link
-										href="#link"
+										href="https://tally.so/r/3yYzo6"
 										className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
 										<span className="text-foreground text-sm">
-											Introducing Support for AI Models
+											Introducing Productico 2.0
 										</span>
 										<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
@@ -137,12 +137,12 @@ export default function HeroSection() {
 											asChild
 											size="lg"
 											className="rounded-xl px-5 text-base">
-											<Link href="#link">
-												<span className="text-nowrap">Start Building</span>
+											<Link href="Can't find what you're looking for? Contact our">
+												<span className="text-nowrap">Request a demo</span>
 											</Link>
 										</Button>
 									</div>
-									<Button
+									{/* <Button
 										key={2}
 										asChild
 										size="lg"
@@ -151,7 +151,7 @@ export default function HeroSection() {
 										<Link href="#link">
 											<span className="text-nowrap">Request a demo</span>
 										</Link>
-									</Button>
+									</Button> */}
 								</AnimatedGroup>
 							</div>
 						</div>
