@@ -111,23 +111,23 @@ export const Header = () => {
 									variant="outline"
 									size="sm"
 									className={cn(isScrolled && 'lg:hidden')}>
-									<Link href="#">
-										<span>Login</span>
+									<Link target='_blank' href="https://tally.so/r/3yYzo6">
+										<span>Get Started</span>
 									</Link>
 								</Button>
-								<Button
+								{/* <Button
 									asChild
 									size="sm"
 									className={cn(isScrolled && 'lg:hidden')}>
 									<Link href="#">
 										<span>Sign Up</span>
 									</Link>
-								</Button>
+								</Button> */}
 								<Button
 									asChild
 									size="sm"
 									className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-									<Link href="#">
+									<Link target='_blank' href="https://tally.so/r/3yYzo6">
 										<span>Get Started</span>
 									</Link>
 								</Button>
