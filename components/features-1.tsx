@@ -82,10 +82,10 @@ export default function FeaturesGrid() {
 					<h2 className="text-balance text-4xl font-semibold lg:text-5xl">
 						Built to cover your needs
 					</h2>
-					<p className="mt-4">
+					{/* <p className="mt-4">
 						Libero sapiente aliquam quibusdam aspernatur, praesentium iusto
 						repellendus.
-					</p>
+					</p> */}
 				</div>
 				<div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 *:text-center md:mt-16">
 					{features.map((feature, index) => (
