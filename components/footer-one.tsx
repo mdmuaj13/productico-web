@@ -1,4 +1,3 @@
-import { Logo } from '@/components/logo'
 import Link from 'next/link'
 import { PrimaryLogo } from './primary-logo'
 
@@ -15,10 +14,10 @@ const links = [
         title: 'Pricing',
         href: '#',
     },
-    {
-        title: 'Help',
-        href: '#',
-    },
+    // {
+    //     title: 'Help',
+    //     href: '#',
+    // },
     {
         title: 'Contact',
         href: 'https://tally.so/r/3yYzo6',

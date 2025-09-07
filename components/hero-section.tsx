@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from '@/components/ui/animated-group';
+import type { Transition } from 'motion/react';
 
 const transitionVariants = {
 	item: {
@@ -21,7 +22,7 @@ const transitionVariants = {
 				type: 'spring',
 				bounce: 0.3,
 				duration: 1.5,
-			},
+			} as Transition,
 		},
 	},
 };
@@ -60,7 +61,7 @@ export default function HeroSection() {
 											type: 'spring',
 											bounce: 0.3,
 											duration: 2,
-										},
+										} as Transition,
 									},
 								},
 							}}

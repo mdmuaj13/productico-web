@@ -311,8 +311,10 @@ export default function GrowthTool() {
 											Smart Insights for Growth
 										</h2>
 										<p className="text-foreground">
-											Track sales trends, see what's selling best, and make
-											smart decisions to grow your business faster.
+											<p className="text-foreground">
+												Track sales trends, see what&#39;s selling best, and
+												make smart decisions to grow your business faster.
+											</p>
 										</p>
 									</div>
 								</CardContent>
