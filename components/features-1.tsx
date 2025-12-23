@@ -188,7 +188,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
 
 export default function FeaturesGrid() {
 	return (
-		<section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
+		<section className="bg-zinc-50 py-16 dark:bg-transparent">
 			<div className="@container mx-auto max-w-6xl px-6">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-balance text-4xl font-semibold lg:text-5xl">
