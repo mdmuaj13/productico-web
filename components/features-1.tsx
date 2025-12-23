@@ -13,6 +13,62 @@ interface Feature {
 	badge?: string;
 }
 
+/** Multicolor badge styles by badge label */
+const badgeStyles: Record<string, { bg: string; text: string; ring: string }> = {
+	Live: {
+		bg: 'bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500',
+		text: 'text-white',
+		ring: 'ring-white/25',
+	},
+	'Supply Chain': {
+		bg: 'bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500',
+		text: 'text-white',
+		ring: 'ring-white/25',
+	},
+	Secure: {
+		bg: 'bg-gradient-to-r from-slate-700 via-indigo-600 to-sky-500',
+		text: 'text-white',
+		ring: 'ring-white/20',
+	},
+	Storefront: {
+		bg: 'bg-gradient-to-r from-orange-500 via-rose-500 to-fuchsia-500',
+		text: 'text-white',
+		ring: 'ring-white/25',
+	},
+	IMS: {
+		bg: 'bg-gradient-to-r from-lime-500 via-emerald-500 to-teal-500',
+		text: 'text-white',
+		ring: 'ring-white/25',
+	},
+	Export: {
+		bg: 'bg-gradient-to-r from-amber-500 via-orange-500 to-red-500',
+		text: 'text-white',
+		ring: 'ring-white/25',
+	},
+};
+
+const getBadgeClass = (badge?: string) => {
+	const style = badge ? badgeStyles[badge] : undefined;
+
+	// fallback multicolor badge (if new badge labels are added later)
+	const fallback = {
+		bg: 'bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-white/20 dark:via-white/10 dark:to-white/20',
+		text: 'text-white dark:text-white',
+		ring: 'ring-white/20',
+	};
+
+	const s = style ?? fallback;
+
+	return [
+		'absolute left-3 top-3 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold shadow-sm',
+		'backdrop-blur-sm',
+		'ring-1',
+		s.bg,
+		s.text,
+		s.ring,
+	].join(' ');
+};
+
 const features: Feature[] = [
 	{
 		badge: 'Live',
@@ -92,21 +148,20 @@ const features: Feature[] = [
 
 const FeatureCard = ({ feature }: { feature: Feature }) => {
 	return (
-		<Card className="group py-0 pb-6 overflow-hidden shadow-zinc-950/5 transition hover:-translate-y-0.5 hover:shadow-zinc-950/10 dark:hover:shadow-black/20">
-			<div className="relative aspect-16/12 w-full">
+		<Card className="group overflow-hidden py-0 pb-6 shadow-zinc-950/5 transition hover:-translate-y-0.5 hover:shadow-zinc-950/10 dark:hover:shadow-black/20">
+			<div className="relative aspect-16/14 w-full">
 				<Image
 					src={feature.image.src}
 					alt={feature.image.alt}
 					fill
-					className="object-fit transition duration-300 group-hover:scale-[1.03]"
+					className="object-cover transition duration-300 group-hover:scale-[1.03]"
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					priority={false}
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+
 				{feature.badge ? (
-					<span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-zinc-900 shadow-sm dark:bg-zinc-900/80 dark:text-white">
-						{feature.badge}
-					</span>
+					<span className={getBadgeClass(feature.badge)}>{feature.badge}</span>
 				) : null}
 			</div>
 
@@ -120,7 +175,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
 			<CardContent className="pt-0">
 				<ul className="space-y-2 text-left text-sm text-zinc-700 dark:text-zinc-200">
 					{feature.points.map((p, i) => (
-						<li key={i} className="flex gap-2">
+						<li key={i} className="flex gap-2 font-semibold">
 							<CheckBullet />
 							<span>{p}</span>
 						</li>
