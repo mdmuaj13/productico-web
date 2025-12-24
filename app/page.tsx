@@ -13,7 +13,7 @@ export default function Home() {
 			<section id="features">
 				<FeaturesOne />
 			</section>
-			<CtaTwo />
+			{/* <CtaTwo /> */}
 			<section id="solution">
 				<Solution />
 			</section>
