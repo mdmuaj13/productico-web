@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight, ExternalLink, Github } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -106,10 +107,13 @@ export default function GradientHero() {
 								</div>
 							</div>
 							<div className="relative">
-								<img
+								<Image
 									src="/images/dashboards.png"
-									alt="Dashboard Preview"
+									alt="Productico ERP dashboard showing real-time analytics, sales tracking, and inventory management"
 									className="w-full"
+									width={1200}
+									height={700}
+									priority
 								/>
 								<div className="from-background absolute inset-0 bg-gradient-to-t to-transparent opacity-0"></div>
 							</div>

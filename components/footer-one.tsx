@@ -4,15 +4,15 @@ import { PrimaryLogo } from './primary-logo'
 const links = [
     {
         title: 'Features',
-        href: '#',
+        href: '#features',
     },
     {
         title: 'Solution',
-        href: '#',
+        href: '#solution',
     },
     {
         title: 'Pricing',
-        href: '#',
+        href: '#pricing',
     },
     // {
     //     title: 'Help',

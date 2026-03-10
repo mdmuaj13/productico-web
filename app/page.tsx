@@ -10,7 +10,7 @@ import FeaturesEight from '@/components/features-8';
 
 export default function Home() {
 	return (
-		<div className="">
+		<main>
 			<GradientHero />
 			<section id="features">
 				<FeaturesOne />
@@ -20,15 +20,21 @@ export default function Home() {
 			<section id="solution">
 				<Solution />
 			</section>
-			<GrowthTool />
-			<FeatureSteps />
-			<LogoCloud />
+			<section id="tools">
+				<GrowthTool />
+			</section>
+			<section id="storefront">
+				<FeatureSteps />
+			</section>
+			<section id="trusted-by">
+				<LogoCloud />
+			</section>
 			<section id="pricing">
 				<Pricing />
 			</section>
 			<section id="faqs">
-			<FAQs />
+				<FAQs />
 			</section>
-		</div>
+		</main>
 	);
 }

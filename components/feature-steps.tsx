@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Store, Globe, Palette, ExternalLink } from 'lucide-react';
@@ -133,9 +134,9 @@ export default function FeatureSteps() {
 											animate={{ y: 0, opacity: 1, rotateX: 0 }}
 											exit={{ y: -100, opacity: 0, rotateX: 20 }}
 											transition={{ duration: 0.5, ease: 'easeInOut' }}>
-											<img
+											<Image
 												src={feature.image}
-												alt={feature.title}
+												alt={`Productico storefront setup - ${feature.title}: ${feature.content}`}
 												className="h-full w-full transform object-cover transition-transform hover:scale-105"
 												width={1000}
 												height={500}

@@ -15,19 +15,83 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://productico.app'),
 	icons: '/icon.svg',
-	title: 'Productico',
+	title: 'Productico – ERP & Inventory Management for Manufacturing',
 	description:
-		"Boost efficiency and enhance control over your business processes with our productico ERP and inventory management solution. Optimize resource utilization, automate workflows, and stay ahead of the competition. Explore a comprehensive suite of features tailored to meet your organization's unique needs.",
+		'All-in-one ERP for manufacturing businesses. Real-time analytics, inventory management, vendor tracking, invoicing, and an online storefront—built to scale.',
 	keywords: [
 		'productico',
-		'InventoryManagement',
-		'ERP',
-		'EnterpriseSolutions',
-		'BusinessOperations',
-		'E-commerce',
-		'F-commerce',
+		'ERP software',
+		'inventory management',
+		'manufacturing ERP',
+		'business management software',
+		'vendor management',
+		'order management',
+		'e-commerce storefront',
+		'invoicing software',
+		'supply chain management',
 	],
+	openGraph: {
+		title: 'Productico – ERP & Inventory Management for Manufacturing',
+		description:
+			'All-in-one ERP for manufacturing businesses. Real-time analytics, inventory management, vendor tracking, invoicing, and an online storefront.',
+		url: 'https://productico.app',
+		siteName: 'Productico',
+		type: 'website',
+		locale: 'en_US',
+		images: [
+			{
+				url: '/images/dashboards.png',
+				width: 1200,
+				height: 630,
+				alt: 'Productico ERP Dashboard',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Productico – ERP & Inventory Management for Manufacturing',
+		description:
+			'All-in-one ERP for manufacturing businesses. Real-time analytics, inventory, vendors, invoicing & storefront.',
+		images: ['/images/dashboards.png'],
+	},
+	alternates: {
+		canonical: 'https://productico.app',
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
+};
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: 'Productico',
+	applicationCategory: 'BusinessApplication',
+	operatingSystem: 'Web',
+	description:
+		'All-in-one ERP for manufacturing businesses. Real-time analytics, inventory management, vendor tracking, invoicing, and an online storefront.',
+	url: 'https://productico.app',
+	offers: [
+		{
+			'@type': 'Offer',
+			price: '0',
+			priceCurrency: 'USD',
+			name: 'Free Trial',
+			description: 'Try Productico free for 1 month.',
+		},
+		{
+			'@type': 'Offer',
+			price: '29',
+			priceCurrency: 'USD',
+			name: 'Professional',
+			description:
+				'For growing businesses that need unlimited products and orders.',
+		},
+	],
+	aggregateRating: undefined,
 };
 
 export default function RootLayout({
@@ -39,6 +103,10 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 				<Header />
 				{children}
 				<FooterSection />

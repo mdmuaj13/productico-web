@@ -58,8 +58,25 @@ export default function FAQs() {
 		},
 	];
 
+	const faqJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	};
+
 	return (
 		<section className="bg-muted py-16 md:py-24">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+			/>
 			<div className="mx-auto max-w-6xl px-4 md:px-6">
 				<div>
 					<h2 className="text-foreground text-4xl font-semibold">

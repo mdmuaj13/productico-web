@@ -212,9 +212,9 @@ export default function CongestedPricing() {
 								</div>
 							)}
 							<div className="flex flex-1 flex-col">
-								<p className="text-muted-foreground text-base font-semibold">
-									{plan.name}
-								</p>
+								<h3 className="text-muted-foreground text-base font-semibold">
+								{plan.name}
+							</h3>
 								<div className="mt-6 flex items-center justify-center gap-x-2">
 									<span className="text-foreground text-5xl font-bold tracking-tight">
 										<NumberFlow
