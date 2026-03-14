@@ -3,13 +3,13 @@ import FAQs from '@/components/faqs-section-one';
 import FeaturesOne from '@/components/features-1';
 import GrowthTool from '@/components/growth';
 import Solution from '@/components/solution';
-import HeroSection from '@/components/hero-section';
+import GradientHero from '@/components/gradient-hero';
 import Pricing from '@/components/pricing';
 
 export default function Home() {
 	return (
 		<div className="">
-			<HeroSection />
+			<GradientHero />
 			<section id="features">
 				<FeaturesOne />
 			</section>

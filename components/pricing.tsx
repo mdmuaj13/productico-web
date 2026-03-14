@@ -1,115 +1,287 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Check } from 'lucide-react'
+'use client';
 
-export default function Pricing() {
-    return (
-        <section className="py-16">
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="mx-auto max-w-2xl space-y-6 text-center">
-                    <h1 className="text-center text-4xl font-semibold lg:text-5xl">Pricing</h1>
-                    <p className="text-lg">Built for the future, Available today.</p>
-                </div>
+import { buttonVariants } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { Check, Star } from 'lucide-react';
+import Link from 'next/link';
+import { useState, useRef } from 'react';
+import confetti from 'canvas-confetti';
+import NumberFlow from '@number-flow/react';
 
-                <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-3">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="font-medium">Free</CardTitle>
+// Define your plans
+const plans = [
+	{
+		name: 'FREE',
+		price: '0',
+		yearlyPrice: '0',
+		period: '1 month trial',
+		features: [
+			'Live dashboard with KPIs',
+			'Profit & loss snapshots',
+			'Sales trends by day/week/month',
+			'Vendor profiles & history',
+			'Purchase order tracking',
+			'Role-based permissions',
+			'Automatic backups',
+			'Basic inventory management',
+			'One-click reports',
+			'Excel/PDF export',
+		],
+		description:
+			'Try Productico free for 1 month. Perfect for exploring the platform.',
+		buttonText: 'Start Free Trial',
+		href: 'https://tally.so/r/3yYzo6',
+		isPopular: false,
+	},
+	{
+		name: 'PROFESSIONAL',
+		price: '29',
+		yearlyPrice: '24',
+		period: 'per month',
+		features: [
+			'Everything in Free',
+			'Unlimited products',
+			'Unlimited orders',
+			'Custom domain',
+			'Advanced analytics & reporting',
+			'Priority support',
+			'Team collaboration',
+			'Due payment reminders',
+			'Multiple warehouse support',
+			'Product variants management',
+			// 'Shareable report links',
+		],
+		description:
+			'For growing businesses that need unlimited products and orders.',
+		buttonText: 'Get Started',
+		href: 'https://tally.so/r/3yYzo6',
+		isPopular: true,
+	},
+	{
+		name: 'ENTERPRISE',
+		price: '199',
+		yearlyPrice: '159',
+		period: 'per month',
+		features: [
+			'Everything in Professional',
+			'Custom domain with SSL',
+			'Shareable report links',
+			'Unlimited reports',
+			'Custom storefront',
+			'SLA agreement',
+			'Dedicated account manager',
+			'Custom integrations',
+			'Advanced security features',
+			'SSO authentication',
+			'Priority support (24-hour response)',
+		],
+		description:
+			'For large organizations that need custom solutions and dedicated support.',
+		buttonText: 'Contact Sales',
+		href: 'https://tally.so/r/3yYzo6',
+		isPopular: false,
+	},
+];
 
-                            <span className="my-3 block text-2xl font-semibold">$0 /month</span>
+interface PricingPlan {
+	name: string;
+	price: string;
+	yearlyPrice: string;
+	period: string;
+	features: string[];
+	description: string;
+	buttonText: string;
+	href: string;
+	isPopular: boolean;
+}
 
-                            <CardDescription className="text-sm">Simple and powerful</CardDescription>
-                            <Button
-                                asChild
-                                variant="outline"
-                                className="mt-4 w-full">
-                                <Link href="">Get early access for free</Link>
-                            </Button>
-                        </CardHeader>
+interface PricingProps {
+	plans: PricingPlan[];
+	title?: string;
+	description?: string;
+}
 
-                        <CardContent className="space-y-4">
-                            <hr className="border-dashed" />
+export default function CongestedPricing() {
+	const [isMonthly, setIsMonthly] = useState(true);
+	const isDesktop = useMediaQuery('(min-width: 768px)');
+	const switchRef = useRef<HTMLButtonElement>(null);
 
-                            <ul className="list-outside space-y-3 text-sm">
-                                {['Unlimited Product', 'Unlimited Category', 'Unlimited Order', 'Unlimited Stock', 'Built-in E-commerce shop', 'Shared Database', 'Shared Server'].map((item, index) => (
-                                    <li
-                                        key={index}
-                                        className="flex items-center gap-2">
-                                        <Check className="size-3" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
+	const handleToggle = (checked: boolean) => {
+		setIsMonthly(!checked);
+		if (checked && switchRef.current) {
+			const rect = switchRef.current.getBoundingClientRect();
+			const x = rect.left + rect.width / 2;
+			const y = rect.top + rect.height / 2;
 
-                    <Card className="relative">
-                        <span className="bg-linear-to-br/increasing absolute inset-x-0 -top-3 mx-auto flex h-6 w-fit items-center rounded-full from-purple-400 to-amber-300 px-3 py-1 text-xs font-medium text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5">Popular</span>
+			confetti({
+				particleCount: 50,
+				spread: 60,
+				origin: {
+					x: x / window.innerWidth,
+					y: y / window.innerHeight,
+				},
+				colors: [
+					'hsl(var(--primary))',
+					'hsl(var(--accent))',
+					'hsl(var(--secondary))',
+					'hsl(var(--muted))',
+				],
+				ticks: 200,
+				gravity: 1.2,
+				decay: 0.94,
+				startVelocity: 30,
+				shapes: ['circle'],
+			});
+		}
+	};
 
-                        <CardHeader>
-                            <CardTitle className="font-medium">Pro</CardTitle>
+	return (
+		<div className="py-20">
+			<div className="mx-auto max-w-6xl px-6">
+				<div className="mb-12 space-y-4 text-center">
+					<h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+						Simple pricing for growing manufacturing businesses
+					</h2>
+					<p className="text-muted-foreground text-lg">
+						All plans include real-time analytics, vendor management, and
+						cloud-based infrastructure.
+					</p>
+				</div>
 
-                            <span className="my-3 block text-2xl font-semibold">$9 /month</span>
+				<div className="mb-10 flex justify-center">
+					<label className="relative inline-flex cursor-pointer items-center">
+						<Label>
+							<Switch
+								ref={switchRef as any}
+								checked={!isMonthly}
+								onCheckedChange={handleToggle}
+								className="relative"
+							/>
+						</Label>
+					</label>
+					<span className="ml-2 font-semibold">
+						Annual billing <span className="text-primary">(Save 20%)</span>
+					</span>
+				</div>
 
-                            <CardDescription className="text-sm">Built for growing business</CardDescription>
+				<div className="sm:2 grid grid-cols-1 gap-4 md:grid-cols-3">
+					{plans.map((plan, index) => (
+						<motion.div
+							key={index}
+							initial={{ y: 50, opacity: 1 }}
+							whileInView={
+								isDesktop
+									? {
+											y: plan.isPopular ? -20 : 0,
+											opacity: 1,
+											x: index === 2 ? -30 : index === 0 ? 30 : 0,
+											scale: index === 0 || index === 2 ? 0.94 : 1.0,
+										}
+									: {}
+							}
+							viewport={{ once: true }}
+							transition={{
+								duration: 1.6,
+								type: 'spring',
+								stiffness: 100,
+								damping: 30,
+								delay: 0.4,
+								opacity: { duration: 0.5 },
+							}}
+							className={cn(
+								`bg-background relative rounded-2xl border-[1px] p-6 text-center lg:flex lg:flex-col lg:justify-center`,
+								plan.isPopular ? 'border-primary border-2' : 'border-border',
+								'flex flex-col',
+								!plan.isPopular && 'mt-5',
+								index === 0 || index === 2
+									? 'z-0 translate-x-0 translate-y-0 -translate-z-[50px] rotate-y-[10deg] transform'
+									: 'z-10',
+								index === 0 && 'origin-right',
+								index === 2 && 'origin-left',
+							)}>
+							{plan.isPopular && (
+								<div className="bg-primary absolute top-0 right-0 flex items-center rounded-tr-xl rounded-bl-xl px-2 py-0.5">
+									<Star className="text-primary-foreground h-4 w-4 fill-current" />
+									<span className="text-primary-foreground ml-1 font-sans font-semibold">
+										Popular
+									</span>
+								</div>
+							)}
+							<div className="flex flex-1 flex-col">
+								<p className="text-muted-foreground text-base font-semibold">
+									{plan.name}
+								</p>
+								<div className="mt-6 flex items-center justify-center gap-x-2">
+									<span className="text-foreground text-5xl font-bold tracking-tight">
+										<NumberFlow
+											value={
+												isMonthly
+													? Number(plan.price)
+													: Number(plan.yearlyPrice)
+											}
+											format={{
+												style: 'currency',
+												currency: 'USD',
+												minimumFractionDigits: 0,
+												maximumFractionDigits: 0,
+											}}
+											transformTiming={{
+												duration: 500,
+												easing: 'ease-out',
+											}}
+											willChange
+											className="font-variant-numeric: tabular-nums"
+										/>
+									</span>
+									{plan.period !== 'Next 3 months' && (
+										<span className="text-muted-foreground text-sm leading-6 font-semibold tracking-wide">
+											/ {plan.period}
+										</span>
+									)}
+								</div>
 
-                            <Button
-                                asChild
-                                className="mt-4 w-full">
-                                <Link href="">Get Started</Link>
-                            </Button>
-                        </CardHeader>
+								<p className="text-muted-foreground text-xs leading-5">
+									{isMonthly ? 'billed monthly' : 'billed annually'}
+								</p>
 
-                        <CardContent className="space-y-4">
-                            <hr className="border-dashed" />
+								<ul className="mt-5 flex flex-col gap-2">
+									{plan.features.map((feature, idx) => (
+										<li key={idx} className="flex items-start gap-2">
+											<Check className="text-primary mt-1 h-4 w-4 flex-shrink-0" />
+											<span className="text-left">{feature}</span>
+										</li>
+									))}
+								</ul>
 
-                            <ul className="list-outside space-y-3 text-sm">
-                                {['Includes everything in free', 'Unlimited Report Export', 'Unlimited Invoice', 'CRM Module', 'E-commerce shop management', 'Dedicated Database', 'Custom Subdomain and Domain'].map((item, index) => (
-                                    <li
-                                        key={index}
-                                        className="flex items-center gap-2">
-                                        <Check className="size-3" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
+								<hr className="my-4 w-full" />
 
-                    <Card className="flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="font-medium">Enterprise</CardTitle>
-
-                            <span className="my-3 block text-2xl font-semibold">Custom</span>
-
-                            <CardDescription className="text-sm">Fully tailored for your business</CardDescription>
-
-                            <Button
-                                asChild
-                                variant="outline"
-                                className="mt-4 w-full">
-                                <Link href="">Contact Now</Link>
-                            </Button>
-                        </CardHeader>
-
-                        <CardContent className="space-y-4">
-                            <hr className="border-dashed" />
-
-                            <ul className="list-outside space-y-3 text-sm">
-                                {['Includes everything in Pro', 'Unlimited editor', 'Dedicated Server', 'Dedicated Database and Daily Backup', 'Third-party analytics integrations', 'Custom Integration', 'Custom SLA agreement'].map((item, index) => (
-                                    <li
-                                        key={index}
-                                        className="flex items-center gap-2">
-                                        <Check className="size-3" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
-    )
+								<Link
+									prefetch={false}
+									href={plan.href}
+									className={cn(
+										buttonVariants({
+											variant: 'outline',
+										}),
+										'group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter',
+										'hover:bg-primary hover:text-primary-foreground hover:ring-primary transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-offset-1',
+										plan.isPopular
+											? 'bg-primary text-primary-foreground'
+											: 'bg-background text-foreground',
+									)}>
+									{plan.buttonText}
+								</Link>
+								<p className="text-muted-foreground mt-6 text-xs leading-5">
+									{plan.description}
+								</p>
+							</div>
+						</motion.div>
+					))}
+				</div>
+			</div>
+		</div>
+	);
 }
