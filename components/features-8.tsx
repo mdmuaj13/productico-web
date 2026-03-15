@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Users } from 'lucide-react';
 import Image from 'next/image';
 
-export default function FeaturesSection() {
+export default function FeaturesEight() {
 	return (
 		<section className="bg-gray-50 pb-16 md:py-24 dark:bg-transparent">
 			<div className="text-center py-16">
