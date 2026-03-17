@@ -1,22 +1,27 @@
 import FAQs from '@/components/faqs-section-one';
-import FeaturesOne from '@/components/features-1';
 import GrowthTool from '@/components/growth';
 import Solution from '@/components/solution';
 import GradientHero from '@/components/gradient-hero';
 import Pricing from '@/components/pricing';
 import LogoCloud from '@/components/logo-cloud';
-import FeatureSteps from '@/components/feature-steps';
-import FeaturesEight from '@/components/features-8';
+import StorefrontSteps from '@/components/storefront-steps';
+import ProblemSection from '@/components/problem-section';
+import { FeatureBento } from '@/components/feature-bento';
+import CTA from '@/components/cta';
+import Faq1 from '@/components/faq';
 
 export default function Home() {
 	return (
 		<main>
 			<GradientHero />
-			<section id="features">
-				<FeaturesOne />
-				{/* <FeaturesEight /> */}
+			<LogoCloud />
+			<section id="problem">
+				<ProblemSection />
 			</section>
-			{/* <CtaTwo /> */}
+			<section id="features">
+				<FeatureBento />
+			</section>
+
 			<section id="solution">
 				<Solution />
 			</section>
@@ -24,16 +29,16 @@ export default function Home() {
 				<GrowthTool />
 			</section>
 			<section id="storefront">
-				<FeatureSteps />
+				<StorefrontSteps />
 			</section>
-			<section id="trusted-by">
-				<LogoCloud />
-			</section>
+			<CTA />
+
 			<section id="pricing">
 				<Pricing />
 			</section>
 			<section id="faqs">
-				<FAQs />
+				{/* <FAQs /> */}
+				<Faq1 />
 			</section>
 		</main>
 	);

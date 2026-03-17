@@ -19,20 +19,16 @@ export default function GradientHero() {
 
 			<div className="relative z-10 container mx-auto px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
 				<div className="mx-auto max-w-5xl">
-					{/* Badge */}
+					{/* Eyebrow Tag */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						className="mx-auto mb-6 flex justify-center">
-						<div className="border-border bg-background/80 inline-flex items-center rounded-full border px-3 py-1 text-sm backdrop-blur-sm">
-							<span className="bg-primary mr-2 rounded-full px-2 py-0.5 text-xs font-semibold text-white">
-								New
+						<div className="border-border bg-background/80 inline-flex items-center rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm">
+							<span className="text-foreground font-medium">
+								Business management, simplified.
 							</span>
-							<span className="text-muted-foreground">
-								Introducing Productico 2.0
-							</span>
-							<ChevronRight className="text-muted-foreground ml-1 h-4 w-4" />
 						</div>
 					</motion.div>
 
@@ -42,7 +38,9 @@ export default function GradientHero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.1 }}
 						className="from-primary/10 via-foreground/85 to-foreground/50 bg-gradient-to-tl bg-clip-text text-center text-4xl tracking-tighter text-balance text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
-						Business management software for Manufacturing Business
+						Run Your Entire Business
+						<br />
+						From One Place.
 					</motion.h1>
 
 					{/* Description */}
@@ -51,9 +49,7 @@ export default function GradientHero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						className="text-muted-foreground mx-auto mt-6 max-w-2xl text-center text-lg">
-						Skip the tech struggles and focus on your passion. Create your
-						shop, showcase your products, and manage everything with our
-						all-in-one solution.
+						Productico brings your products, inventory, orders, warehouses, and storefront under one roof—so you spend less time switching tools and more time growing.
 					</motion.p>
 
 					{/* CTA Buttons */}
@@ -68,7 +64,7 @@ export default function GradientHero() {
 							className="group bg-primary text-primary-foreground hover:shadow-primary/30 relative overflow-hidden rounded-full px-6 shadow-lg transition-all duration-300">
 							<a href="https://tally.so/r/3yYzo6">
 								<span className="relative z-10 flex items-center">
-									Try Productico for free
+									Start Free — No Credit Card Needed
 									<ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
 								</span>
 								<span className="from-primary via-primary/90 to-primary/80 absolute inset-0 z-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
@@ -80,8 +76,19 @@ export default function GradientHero() {
 							size="lg"
 							asChild
 							className="border-border bg-background/50 flex items-center gap-2 rounded-full backdrop-blur-sm">
-							<a href="https://tally.so/r/3yYzo6">Get a demo</a>
+							<a href="https://tally.so/r/3yYzo6">Watch a 2-Minute Demo</a>
 						</Button>
+					</motion.div>
+
+					{/* Social Signal */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.4 }}
+						className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+						<span>Trusted by 500+ manufacturing and product businesses</span>
+						<span className="text-border">·</span>
+						<span className="font-medium text-foreground">Free for 30 days</span>
 					</motion.div>
 
 					{/* Feature Image */}
