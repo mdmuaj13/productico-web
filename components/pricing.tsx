@@ -18,7 +18,7 @@ const plans = [
 		name: 'FREE',
 		price: '0',
 		yearlyPrice: '0',
-		period: '1 month trial',
+		period: 'month',
 		features: [
 			'Live dashboard with KPIs',
 			'Profit & loss snapshots',
@@ -39,8 +39,8 @@ const plans = [
 	},
 	{
 		name: 'PROFESSIONAL',
-		price: '29',
-		yearlyPrice: '24',
+		price: '19',
+		yearlyPrice: '15',
 		period: 'per month',
 		features: [
 			'Everything in Free',
